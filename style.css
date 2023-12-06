@@ -10,13 +10,6 @@
 }
 
 @font-face {
-    font-family: Poppins-Regular;
-    src: 
-    local(Poppins-Regular),
-    url("./fonts/Poppins/Poppins-Regular.ttf");
-}
-
-@font-face {
     font-family: Poppins;
     src: 
     local(Poppins),
@@ -62,6 +55,9 @@ header img:hover {
 
 #fond_accueil {
     background-image: url("./Image/flow2background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: bottom;
     height:90vh;
 }
 
@@ -99,6 +95,7 @@ a:hover {
 }
 
 #fonctionnalites {
+    display: flex;
     padding: 5vh 0;
     font-family: Poppins;
 }
