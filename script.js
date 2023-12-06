@@ -10,6 +10,11 @@ async function getRandomlyWithRequest(request) {
     return resultJson;
 }
 
+async function getSeriesFromPersonality(id) {
+    const reponse = await fetch("https://api.tvmaze.com/people/" + id + "/castcredits?embed=show");
+    const resultJson = await reponse.json();
+    return resultJson;
+}
 
 async function displaySerie() {
     const serie = await getRandomlyWithRequest("https://api.tvmaze.com/shows/");
@@ -48,12 +53,12 @@ async function displayPersonality(){
     if (personality.birthday != null) {
         var birthday = document.createElement("p");
         birthday.innerHTML = "<strong>Birthday :</strong> " + personality.birthday;
-        document.getElementById("content-series").appendChild(birthday);
+        document.getElementById("content").appendChild(birthday);
     }
     if (personality.country != null) {
         var country = document.createElement("p");
         country.innerHTML = "<strong>Country :</strong> " + personality.country.name;
-        document.getElementById("content-series").appendChild(country);
+        document.getElementById("content").appendChild(country);
     }
     
 
@@ -61,7 +66,6 @@ async function displayPersonality(){
         document.getElementById("personality-image").setAttribute("src", personality.image.medium);
         document.getElementById("personality-image").setAttribute("alt", "picture of " + personality.name);
     }
-
 }
 
 

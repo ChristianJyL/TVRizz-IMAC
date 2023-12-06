@@ -84,6 +84,7 @@ a:hover {
 
 main {
     margin-top: 5vh;
+    margin-bottom: 20vh;
     padding-left: 10vw;
     padding-right: 10vw;
     display: flex;
@@ -117,9 +118,10 @@ h3 {
 }
 
 button {
-    background-color: #E43E54;
-    color: white;
-    border: none;
+    background-color: transparent;
+    border: 1px solid #E43E54;
+    color: #E43E54;
+    transition: 0.5s;
     border-radius: 25px;
     padding: 0.5rem 3rem;
     font-weight: 700;
@@ -127,26 +129,37 @@ button {
     cursor: pointer;
 }
 
-
-article {
-    display: flex;
-    margin-top: 15vh;
-    margin-bottom: 3rem;
+button:hover {
+    background-color: #E43E54;
+    transform:scale(1.1);
+    color: white;
+    border: none;
 }
 
-#content-series p>strong {
+article{
+    margin-top: 10vh;
+}
+
+#serie {
+    display: flex;
+}
+
+#personality{
+    text-align: center;
+}
+
+#serie #content p>strong {
     text-decoration: underline;
 }
+
 
 b {
     /*balise déjà présente dans le json de la réponse*/
     color: #E43E54;
 }
 
-
-#content-series {
+#serie #content {
     margin-left: 2rem;
-
 }
 
 article img {
@@ -162,8 +175,19 @@ article img {
         align-items: center;
     }
 
-    #content-series {
+    #serie #content {
         margin-left: 0;
         margin-top: 1.5rem;
     }
+}
+
+footer{
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+footer>div{
+    align-items: center;
+    padding: 5vh 0 5vh 0;
 }

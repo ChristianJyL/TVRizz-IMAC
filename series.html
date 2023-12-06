@@ -31,9 +31,9 @@
         <h2>Click on the button below to get a <span>random TV show </span> !</h2>
         <button type="button" onClick="window.location.reload()">Reroll</button>
 
-        <article>
+        <article id="serie">
             <img src="Image/unknowImage.png" id="serie-image" alt="no poster">
-            <div id="content-series">
+            <div id="content">
                 <h3 id="serie-title">Unknown</h3>
                 <p><strong>Premiered :</strong>
                     <date id="premiered">Unknown</date>
@@ -45,12 +45,22 @@
                 <p><strong>Summary :</strong> <span id="summary">Unknown</span></p>
             </div>
         </article>
-
-
     </main>
+
+    <footer>
+        <div>
+            <a href="index.html"><img src="./Image/logoAvecTexte.svg" alt="Logo de TV RIZZ"/></a>
+            <div id="contact">
+                <h1>CONTACT US</h1>
+                <p>30 rue Sainte IMAC, 75001 Paris France</p>
+                <p>+33 6 98 17 86 83</p>
+                <p>contact@tv-rizz.com</p>
+            </div>
+        </div>
+    </footer>
 
 
 </body>
-<script src="script.js">displaySerie();</script>
+<script src="script.js"></script>
 
 </html>
