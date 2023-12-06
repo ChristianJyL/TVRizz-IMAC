@@ -68,8 +68,17 @@ header img:hover {
 h1 {
     color: white;
     margin: 0%;
+    margin-left: 3%;
+    margin-right: 3%;
     padding-top: 10vh;
-    font-family: Inter-Bold;
+    font-family: Inter;
+    letter-spacing:0.5em;
+    font-size: 3rem;
+}
+
+.texte_du_début {
+    font-family: Poppins;
+    color: white;
 }
 
 a {
@@ -86,6 +95,7 @@ a:hover {
 .aligne_au_milieu {
     display:flex;
     justify-content: center;
+    text-align: center;
 }
 
 #fonctionnalites {
