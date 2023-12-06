@@ -180,6 +180,15 @@ footer{
 }
 
 footer>div{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     padding: 5vh 0 5vh 0;
+    
+}
+
+#contact{
+    min-width: 25rem;
 }
