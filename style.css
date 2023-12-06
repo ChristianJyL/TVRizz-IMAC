@@ -1,0 +1,45 @@
+@font-face {
+    font-family: Inter;
+    src: 
+    local(Inter),
+    url("./Inter/static/Inter-Bold.ttf");
+}
+
+header {
+    background-color: black;
+}
+
+li {
+    color: white;
+    list-style-type: none;
+    margin: 1%;
+}
+
+.aligne_le_menu {
+    display:flex;
+    justify-content: flex-start;
+    margin: 0%;
+}
+
+#fond_accueil {
+    background-image: url("./Image/flow2background.png");
+    height:80vh;
+}
+
+h1 {
+    color: white;
+    margin: 0%;
+    padding-top: 10vh;
+    font-family: Inter-Bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+.aligne_au_milieu {
+    display:flex;
+    justify-content: center;
+}
+
+
