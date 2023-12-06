@@ -1,12 +1,26 @@
-/* * {
-    margin: 0; --> Conseillé de mettre ça au début mais ça casse certains trucs de la page, on verra ça à la fin
-}*/
+* {
+    margin: 0;
+}
 
 @font-face {
     font-family: Inter;
     src: 
     local(Inter),
     url("./fonts/Inter/Inter-VariableFont_slnt\,wght.ttf");
+}
+
+@font-face {
+    font-family: Poppins-Regular;
+    src: 
+    local(Poppins-Regular),
+    url("./fonts/Poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+    font-family: Poppins;
+    src: 
+    local(Poppins),
+    url("./fonts/Poppins/Poppins-Regular.ttf");
 }
 
 body {
@@ -37,7 +51,7 @@ header img {
 header img:hover {
     transform:scale(1.1);
     transform:rotate(5deg);
-    transition: 0.5s ease-in-out;
+    transition: 0.5s;
 }
 
 .aligne_le_menu {
@@ -74,4 +88,7 @@ a:hover {
     justify-content: center;
 }
 
-
+#fonctionnalites {
+    padding: 5vh 0;
+    font-family: Poppins;
+}
