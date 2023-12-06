@@ -145,6 +145,7 @@ article{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 #personality{
@@ -168,8 +169,8 @@ b {
 article img {
     min-height: 20rem;
     max-height: 20rem;
-    margin-right: 2rem;
-    margin-bottom: 2rem;
+    margin: 2rem;
+   
 }
 
 
@@ -189,6 +190,3 @@ footer>div{
     
 }
 
-#contact{
-    min-width: 25rem;
-}
