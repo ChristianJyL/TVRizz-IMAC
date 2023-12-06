@@ -61,6 +61,13 @@ header img:hover {
     height:90vh;
 }
 
+#accueil {
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+    text-align: center;
+}
+
 h1 {
     color: white;
     margin: 0%;
@@ -70,26 +77,32 @@ h1 {
     font-family: Inter;
     letter-spacing:0.3em;
     font-size: 3rem;
-    display:flex;
-    justify-content: center;
-    text-align: center;
 }
 
 #texte_du_début {
-    display:flex;
-    justify-content: center;
-    text-align: center;
     font-family: Poppins;
     color: white;
-    margin-top: 3%;    
+    margin-top: 3%;
+    margin-bottom: 3%; 
 }
 
 #Learn_more {
-    display:flex;
-    justify-content: center;
-    text-align: center;
-    margin-top: 3%;
+    font-family: Poppins;
     font-size: 1.5rem;
+    background-color:rgb(228, 62, 84);
+    border-radius: 20px;
+    padding: 1%;
+    max-width: 20vw;
+    color: white;
+    margin: 0 auto;
+    border-style: none;
+}
+
+#Learn_more:hover {
+    transform:scale(1.1);
+    transition: 0.25s;
+    background-color: black;
+    color: white;
 }
 
 a {
