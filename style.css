@@ -6,7 +6,7 @@
     font-family: Inter;
     src: 
     local(Inter),
-    url("./Inter/Inter-VariableFont_slnt\,wght.ttf");
+    url("./fonts/Inter/Inter-VariableFont_slnt\,wght.ttf");
 }
 
 body {
