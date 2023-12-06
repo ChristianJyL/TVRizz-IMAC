@@ -142,6 +142,9 @@ article{
 
 #serie {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #personality{
@@ -159,27 +162,16 @@ b {
 }
 
 #serie #content {
-    margin-left: 2rem;
+    max-width: 50rem;
 }
 
 article img {
     min-height: 20rem;
     max-height: 20rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
 }
 
-@media screen and (max-width: 900px) {
-
-    /*sur écran de moins de 900px de large*/
-    article {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #serie #content {
-        margin-left: 0;
-        margin-top: 1.5rem;
-    }
-}
 
 footer{
     text-align: center;
