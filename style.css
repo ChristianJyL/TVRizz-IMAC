@@ -104,7 +104,15 @@ a:hover {
 }
 
 #fonctionnalites {
-    display: flex;
     padding: 5vh 0;
     font-family: Poppins;
+    text-align: center;
+}
+
+section#fonctionnalites > nav {
+    padding-top: 5vh;
+}
+
+section#fonctionnalites > nav > a {
+    margin: 3vw;
 }
