@@ -64,17 +64,32 @@ header img:hover {
 h1 {
     color: white;
     margin: 0%;
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-left: 13%;
+    margin-right: 13%;
     padding-top: 10vh;
     font-family: Inter;
-    letter-spacing:0.5em;
+    letter-spacing:0.3em;
     font-size: 3rem;
+    display:flex;
+    justify-content: center;
+    text-align: center;
 }
 
-.texte_du_début {
+#texte_du_début {
+    display:flex;
+    justify-content: center;
+    text-align: center;
     font-family: Poppins;
     color: white;
+    margin-top: 3%;    
+}
+
+#Learn_more {
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 3%;
+    font-size: 1.5rem;
 }
 
 a {
@@ -86,12 +101,6 @@ a {
 a:hover {
     color: grey;
     transition: 1s;
-}
-
-.aligne_au_milieu {
-    display:flex;
-    justify-content: center;
-    text-align: center;
 }
 
 #fonctionnalites {
