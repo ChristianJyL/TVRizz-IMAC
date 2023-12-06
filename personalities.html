@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <title>TV RIZZ - Personalities</title>
+        <link rel="icon" href="Image/Logo.png" />
+        <meta charset="UTF-8" />
+        <link href="series.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    </head>
+</head>
+
+<body onload="displayPersonality()">
+
+    <header>
+        <nav>
+            <ul class="aligne_le_menu">
+                <li><a href="index.html"><img src="./Image/logoAvecTexte.svg" alt="Logo de TV RIZZ"/></a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="series.html">Series</a></li>
+                <li><a href="personalities.html">Personalities</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Dive into the world of <span>actors and actresses</span></h1>
+        <h2>Click on the button below to show a <span>random personality</span> !</h2>
+        <button type="button" onClick="window.location.reload()">Reroll</button>
+
+        <article>
+            <img src="Image/unknowImage.png" id="personality-image" alt="no poster">
+            <div id="content-series">
+                <h3 id="name">Unknown</h3>
+            </div>
+        </article>
+
+
+    </main>
+
+
+</body>
+<script src="script.js"></script>
+
+</html>
