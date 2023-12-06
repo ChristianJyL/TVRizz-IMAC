@@ -21,9 +21,8 @@ body {
 }
 
 header {
-    /*background-color: black;*/
+    background-color: black;
     padding : 2vh 1vw;
-    background: linear-gradient(black 75%, transparent);
 }
 
 li {
@@ -58,7 +57,7 @@ header img:hover {
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: bottom;
-    height:90vh;
+    height:91vh;
 }
 
 h1 {
