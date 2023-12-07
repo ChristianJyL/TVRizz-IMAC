@@ -13,11 +13,18 @@
 </head>
 
 <body onload="displayPersonality()">
+    <nav aria-label="Quick access" id="avoidance">
+        <ul>
+            <li><a href="#content">Go to content</a></li>
+            <li><a href="#menu">Go to menu</a></li>
+            <li><a href="#footer">Go to footer</a></li>
+        </ul>
+    </nav>
 
-    <header>
-        <nav>
+    <header id="menu">
+        <nav >
             <ul class="aligne_le_menu">
-                <li><a href="index.html"><img src="./Image/logoAvecTexte.svg" alt="Logo de TV RIZZ"/></a></li>
+                <li><a href="index.html"><img src="./Image/logoAvecTexte.svg" alt="Logo de TV RIZZ" /></a></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="series.html">Series</a></li>
                 <li><a href="personalities.html">Personalities</a></li>
@@ -25,20 +32,37 @@
         </nav>
     </header>
 
-    <main>
+    <main id="content">
         <h1>Dive into the world of <span>actors and actresses</span></h1>
         <h2>Click on the button below to show a <span>random personality</span> !</h2>
-        <button type="button" onClick="window.location.reload()">Reroll</button>
+        <button type="button" onClick="displayPersonality()">Reroll</button>
 
         <article id="personality">
-            <img src="Image/unknowImage.png" id="personality-image" alt="no poster">
+            <img src="Image/unknownImage.png" id="personality-image" alt="no poster">
             <div id="content">
-                <h3 id="name">Unknown</h3>
+                <h3 id="personality-name">Unknown</h3>
+                <p><strong>Birthday : </strong> <span id="birthday">Unknown</span></p>
+                <p><strong>Country :</strong> <span id="country">Unknown</span></p>
             </div>
         </article>
 
 
     </main>
+
+    <footer id="footer">
+        <div>
+            <a href="index.html"><img src="./Image/logoAvecTexte.svg" alt="Logo de TV RIZZ" /></a>
+            <address>
+                <h1>CONTACT US</h1>
+                <p>30 rue Sainte IMAC, 75001 Paris France</p>
+                <a href="tel:+33698178683" title="Call TV Rizz to 06 98 17 86 83">+33 6 98 17 86 83</a>
+                <br>
+                <a href="mailto:contact@tv-rizz.com" title="Send a mail to contact@tv-rizz.com">contact@tv-rizz.com</a>
+            </address>
+        </div>
+        <p>Powered by <a href="https://www.tvmaze.com/api">TVMaze</a> data to deliver an enhanced TV information
+            experience.</p>
+    </footer>
 
 
 </body>
