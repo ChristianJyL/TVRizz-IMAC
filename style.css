@@ -38,6 +38,7 @@ header li:first-of-type {
 
 header img {
     max-width: 9vw;
+    transition : 0.5s;
 }
 
 header img:hover {
@@ -95,6 +96,7 @@ h1 {
     color: white;
     margin: 0 auto;
     border-style: none;
+    transition: 0.25s;
 }
 
 #Learn_more:hover {
@@ -108,6 +110,7 @@ a {
     text-decoration: none;
     color: white;
     font-family: Inter;
+    transition: 1s;
 }
 
 a:hover {
