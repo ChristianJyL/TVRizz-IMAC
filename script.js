@@ -19,27 +19,39 @@ async function getSeriesFromPersonality(id) {
 async function displaySerie() {
     const serie = await getRandomlyWithRequest("https://api.tvmaze.com/shows/");
 
-    if (serie.premiered != null) {
-        document.getElementById("premiered").innerHTML = serie.premiered;
-    }
-    if (serie.genres.length != 0) {
-        document.getElementById("genres").innerHTML = serie.genres;
-    }
+    const premieredText = document.getElementById("premiered");
+    premieredText.innerText = serie.premiered ? serie.premiered : "Unknown";
+
+    const genresText = document.getElementById("genres");
+    genresText.innerText = serie.genres.length !== 0 ? serie.genres : "Unknown"
+
+
     if (serie.summary != null) {
         serie.summary = serie.summary.replace("<p>", "");
         serie.summary = serie.summary.replace("</p>", "");
         
         document.getElementById("summary").innerHTML = serie.summary;
+    }else{
+        document.getElementById("summary").innerHTML = "Unknown"
     }
+
     if (serie.language != null) {
         document.getElementById("language").innerHTML = serie.language;
+    }else{
+        document.getElementById("language").innerHTML = "Unknown"
     }
+
     if (serie.image != null) {
         document.getElementById("serie-image").setAttribute("src", serie.image.medium);
         document.getElementById("serie-image").setAttribute("alt", "poster of " + serie.name);
+    }else{
+        document.getElementById("serie-image").setAttribute("src", "Image/unknowImage.png");
+        document.getElementById("serie-image").setAttribute("alt", "no poster");
     }
     if (serie.network != null) {
         document.getElementById("network").innerHTML = serie.network.name;
+    }else{
+        document.getElementById("network").innerHTML = "Unknown"
     }
 
     document.getElementById("serie-title").innerHTML = serie.name;
