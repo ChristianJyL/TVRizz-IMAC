@@ -18,6 +18,7 @@
 
 body {
     margin: 0;
+    font-family: 'poppins', sans-serif;
 }
 
 header {
@@ -53,7 +54,12 @@ header img:hover {
     margin: 0%;
 }
 
-#fond_accueil {
+#accueil {
+    display:flex;
+    padding-top: 15vh;
+    flex-direction:column;
+    text-align: center;
+
     background-image: url("./Image/flow2background.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -61,19 +67,11 @@ header img:hover {
     height:91vh;
 }
 
-#accueil {
-    display:flex;
-    justify-content: center;
-    flex-direction:column;
-    text-align: center;
-}
-
 h1 {
     color: white;
     margin: 0%;
     margin-left: 13%;
     margin-right: 13%;
-    padding-top: 10vh;
     font-family: Inter;
     letter-spacing:0.3em;
     font-size: 3rem;
@@ -90,9 +88,8 @@ h1 {
     font-family: Poppins;
     font-size: 1.5rem;
     background-color:rgb(228, 62, 84);
-    border-radius: 20px;
-    padding: 1%;
-    max-width: 20vw;
+    border-radius: 25px;
+    padding: 0.5rem 3rem;
     color: white;
     margin: 0 auto;
     border-style: none;
@@ -130,4 +127,57 @@ section#fonctionnalites > nav {
 
 section#fonctionnalites > nav > a {
     margin: 3vw;
+}
+
+#lien {
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+    text-align: center;
+    background-color: rgb(228, 62, 84);
+    color:white;
+    font-family: Poppins;
+    font-size: 1.25rem;
+    padding: 5vh;
+}
+
+button {
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    transition: 0.5s;
+    border-radius: 25px;
+    padding: 0.5rem 4rem;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 3%;
+    margin-right: 3%;
+    min-width: 15em;
+}
+
+button:hover {
+    background-color: white;
+    transform:scale(1.1);
+    color: black;
+}
+
+section#lien > nav {
+    padding: 3vh;
+}
+
+footer{
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+footer>div{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 5vh 0 5vh 0;
+    
 }
