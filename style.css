@@ -31,12 +31,13 @@ body {
     font-family: 'poppins', sans-serif;
 }
 
+/*Style for the header------------------------------------------*/
 header {
     background-color: black;
     padding : 2vh 1vw;
 }
 
-li {
+header li {
     color: white;
     list-style-type: none;
     margin: 1%;
@@ -63,6 +64,8 @@ header img:hover {
     justify-content: flex-start;
     margin: 0%;
 }
+
+/*------------------------------------------*/
 
 #accueil {
     display:flex;
@@ -114,14 +117,14 @@ header img:hover {
     color: white;
 }
 
-a {
+header a {
     text-decoration: none;
     color: white;
     font-family: Inter;
     transition: 1s;
 }
 
-a:hover {
+header a:hover {
     color: grey;
     transition: 1s;
 }
@@ -290,6 +293,16 @@ footer>div{
     padding: 5vh 0 5vh 0;
 }
 
+footer a {
+    color :white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color :white;
+    text-decoration: underline;
+}
+
 address{
     font-style: normal;
 }
@@ -303,5 +316,4 @@ address{
 
 #avoidance:focus-within {
     position: static;
-
 }

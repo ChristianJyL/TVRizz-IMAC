@@ -3,7 +3,7 @@ const defaultText = "Unknown";
 
 /**
  * Used to get randomly a serie or a personality
- * @param {string} request - Request to the api (TVMaze)
+ * @param {string} request - URL to do the request
  */
 async function getRandomlyWithRequest(request) {
     const id = Math.floor(Math.random() * maxID); //get a random id between 0 and 70000
@@ -40,7 +40,7 @@ function setTextContent(element, content, defaultText) {
 
 
 function formatSummary(summary) { //remove <p> tag in the summary (tag present in the json by default)
-    if (summary != null) {
+    if (summary != null && summary !== "") {
         summary = summary.replace("<p>", "");
         summary = summary.replace("</p>", "");
         return summary;
