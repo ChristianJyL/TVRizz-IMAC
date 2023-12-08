@@ -40,7 +40,7 @@ header {
     font-weight: 200;
 }
 
-li {
+header li {
     color: white;
     list-style-type: none;
     margin: 1%;
@@ -67,7 +67,7 @@ header img:hover {
     margin: 0%;
 }
 
-a {
+header a {
     text-decoration: none;
     color: white;
     font-family: Inter;
@@ -197,11 +197,6 @@ address{
     padding: 1rem;
     position: absolute;
     left: -99999rem;
-}
-
-
-#avoidance a {
-    color: black;
 }
 
 #avoidance:focus-within {
