@@ -77,5 +77,3 @@ async function displayPersonality() {
     }
     setImageAttributes(imageElement,personality )
 }
-
-

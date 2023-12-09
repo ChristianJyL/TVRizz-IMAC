@@ -83,7 +83,7 @@ header a:hover {
 
 /*Homepage's style------------------------------------------*/
 
-#accueil {
+#home_section {
     display:flex;
     padding-top: 15vh;
     flex-direction:column;
@@ -96,7 +96,7 @@ header a:hover {
     height:91vh;
 }
 
-#accueil h1 {
+#home_section h1 {
     color: white;
     font-weight: 800;
     margin: 0%;
@@ -107,7 +107,7 @@ header a:hover {
     font-size: 3rem;
 }
 
-#accueil p {
+#home_section p {
     font-family: Poppins;
     color: white;
     margin-top: 3%;
@@ -133,17 +133,17 @@ header a:hover {
     color: white;
 }
 
-#fonctionnalites {
+#features {
     padding: 5vh 0;
     font-family: Poppins;
     text-align: center;
 }
 
-section#fonctionnalites > nav {
+section#features > nav {
     padding-top: 5vh;
 }
 
-section#fonctionnalites > nav > a {
+section#features > nav > a {
     margin: 3vw;
 }
 
@@ -157,6 +157,10 @@ section#fonctionnalites > nav > a {
     font-family: Poppins;
     font-size: 1.25rem;
     padding: 5vh;
+}
+
+section#lien > nav {
+    padding: 3vh;
 }
 
 /*Buttons style*/
@@ -187,11 +191,6 @@ button:hover {
     background-color: white;
     color: black;
 }
-
-section#lien > nav {
-    padding: 3vh;
-}
-
 
 /*For series and personnalities page-----------------------------------*/
 
@@ -322,6 +321,7 @@ address{
 }
 
 /*Avoidance link------------------------------------------------------------*/
+
 #avoidance{
     padding: 1rem;
     position: absolute;
