@@ -18,7 +18,7 @@ async function getRandomlyWithRequest(request) {
 /**
  * change attibutes for an image
  * @param {HTMLElement} imageElement - HTMLElement corresponding to the image
- * @param {JSON} data - JSON containing the image link 
+ * @param {JSON} data - JSON containing the image link and the name 
  */
 function setImageAttributes( imageElement, data) {
     const imageSrc = data.image ? data.image.medium : "Image/unknownImage.png";
