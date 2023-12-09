@@ -87,6 +87,7 @@ header a:hover {
     display:flex;
     padding-top: 15vh;
     flex-direction:column;
+    align-items: center;
     text-align: center;
 
     background-image: url("./Image/flow2background.png");
@@ -99,9 +100,7 @@ header a:hover {
 #home_section>h1 {
     color: white;
     font-weight: 800;
-    margin: 0%;
-    margin-left: 13%;
-    margin-right: 13%;
+    padding: 0 10vw;
     font-family: Inter;
     letter-spacing:0.3em;
     font-size: 3rem;
@@ -121,7 +120,6 @@ header a:hover {
     border-radius: 25px;
     padding: 0.5rem 3rem;
     color: white;
-    margin: 0 auto;
     border-style: none;
     transition: 0.25s;
 }
@@ -134,17 +132,28 @@ header a:hover {
 }
 
 #features {
-    padding: 5vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3vh 0;
     font-family: Poppins;
     text-align: center;
 }
 
-#features > nav {
-    padding-top: 5vh;
+#features>div {
+    width: 50vw;
+    margin-top: 5vh;
+    justify-content: center;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 0.5fr);
+    grid-gap: 3vh 5vw;
 }
 
-#features > nav > a {
-    margin: 3vw;
+#features img {
+    margin: auto;
 }
 
 #links {
@@ -156,11 +165,11 @@ header a:hover {
     color:white;
     font-family: Poppins;
     font-size: 1.25rem;
-    padding: 5vh;
+    padding: 3vh 0;
 }
 
 #links > nav {
-    padding: 3vh;
+    margin: 3vh 0;
 }
 
 /*Buttons style*/
@@ -195,10 +204,7 @@ button:hover {
 /*For series and personnalities page-----------------------------------*/
 
 .main_padding {
-    margin-top: 5vh;
-    margin-bottom: 20vh;
-    padding-left: 10vw;
-    padding-right: 10vw;
+    padding: 5vh 10vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -211,12 +217,12 @@ button:hover {
     font-size: 2rem;
 }
 
-.main_padding h1>span,
-.main_padding h2>span {
+.main_padding>h1>span,
+.main_padding>h2>span {
     color: #E43E54;
 }
 
-.main_padding h2 {
+.main_padding>h2 {
     text-align: center;
     font-weight: 700;
     font-size: 1.25rem;
@@ -242,7 +248,7 @@ h3 {
 }
 
 article{
-    margin-top: 10vh;
+    margin-top: 3vh;
 }
 
 #serie {
@@ -278,6 +284,10 @@ article img {
    
 }
 
+.main_padding p {
+    text-align: justify;
+}
+
 
 /*Footer--------------------------------------------------------------*/
 
@@ -285,7 +295,7 @@ footer{
     text-align: center;
     background-color: black;
     color: white;
-    padding: 5vh 0 5vh 0 ;
+    padding: 3vh;
 }
 
 footer>div{
@@ -294,7 +304,7 @@ footer>div{
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    padding: 5vh 0 5vh 0;
+    margin-bottom : 3vh;
 }
 
 footer img {
@@ -357,34 +367,79 @@ address{
     /* Homepage */
 
     #home_section>h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
-    p {
+    .homepage p {
         padding: 5vw;
+    }
+
+    #home_section>p {
+        margin-top: 3vh;
     }
 
     #home_section>button {
         min-width: 0;
+        margin-top: 3vh;
     }
 
     h2 {
         font-size: 1.25rem;
     }
 
+    #features, #links{
+        padding: 3vh 0;
+    }
+
+    #features>div {
+        margin-top: 0;
+        width: 95vw;
+    }
+
+    #features img {
+        max-width: 20vw;
+    }
+
+    #features>div>p {
+        padding: 0;
+        font-size: 0.75rem;
+    }
+
+    #links {
+        padding-bottom: 0;
+    }
+
     #links button {
         margin: 1vh;
     }
 
+    /* Search pages */
+
+    .main_padding {
+        padding: 3vh 3vw;
+    }
+
+    .main_padding>h1 {
+        font-size: 1.5rem;
+    }
+
+    .main_padding>h2 {
+        margin: 1rem;
+    }
+
+    article {
+        margin-top: 0;
+    }
+
+    #serie-title {
+        text-align: center;
+    }
+
+    .main_padding p {
+        padding: 0 3vw;
+    }
+
     /* Footer */
-
-    footer {
-        padding: 3vh;
-    }
-
-    footer>div {
-        padding: 0;
-    }
 
     footer p {
         font-size: 0.75rem;
