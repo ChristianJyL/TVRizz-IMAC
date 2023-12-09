@@ -5,12 +5,15 @@ const defaultText = "Unknown";
  * Used to get randomly a serie or a personality
  * @param {string} request - URL to do the request
  */
-async function getRandomlyWithRequest(request) {
+async function getRandomlyWithRequest(request, count = 0) {
+    if (count > 5) {
+        throw new Error("Too many requests");
+    }
     const id = Math.floor(Math.random() * maxID); //get a random id between 0 and 70000
-    const reponse = await fetch(request + id); 
+    const reponse = await fetch(request + id);
     const resultJson = await reponse.json();
     if (resultJson.status == 404) {
-        return getRandomlyWithRequest(request);
+        return getRandomlyWithRequest(request, count + 1);
     }
     return resultJson;
 }
@@ -20,9 +23,9 @@ async function getRandomlyWithRequest(request) {
  * @param {HTMLElement} imageElement - HTMLElement corresponding to the image
  * @param {JSON} data - JSON containing the image link and the name 
  */
-function setImageAttributes( imageElement, data) {
+function setImageAttributes(imageElement, data) {
     const imageSrc = data.image ? data.image.medium : "Image/unknownImage.png";
-    const altText = data.image ? "image of " + data.name  : "no poster";
+    const altText = data.image ? "image of " + data.name : "no poster";
     imageElement.setAttribute("src", imageSrc);
     imageElement.setAttribute("alt", altText);
 }
@@ -34,7 +37,7 @@ function setImageAttributes( imageElement, data) {
  * @param {string} defaultText - text in case content is null
  */
 function setTextContent(element, content, defaultText) {
-    element.innerText = content ? content : defaultText; 
+    element.innerText = content ? content : defaultText;
 }
 
 
@@ -49,31 +52,52 @@ function formatSummary(summary) { //remove <p> tag in the summary (tag present i
 }
 
 async function displaySerie() {
-    const serie = await getRandomlyWithRequest("https://api.tvmaze.com/shows/");
-    const imageElement = document.getElementById("serie-image");
+    try {
+        const serie = await getRandomlyWithRequest("https://api.tvmaze.com/shows/");
+        const imageElement = document.getElementById("serie-image");
 
-    setImageAttributes(imageElement, serie );
-    setTextContent(document.getElementById("serie-title"), serie.name , defaultText);
-    setTextContent(document.getElementById("premiered"), serie.premiered, defaultText);
-    setTextContent(document.getElementById("language"), serie.language , defaultText);
-    if (serie.network) {
-        setTextContent(document.getElementById("network"), serie.network.name , defaultText);
+        setImageAttributes(imageElement, serie);
+        setTextContent(document.getElementById("serie-title"), serie.name, defaultText);
+        setTextContent(document.getElementById("premiered"), serie.premiered, defaultText);
+        setTextContent(document.getElementById("language"), serie.language, defaultText);
+        if (serie.network) {
+            setTextContent(document.getElementById("network"), serie.network.name, defaultText);
+        }
+        const genresElement = document.getElementById("genres");
+        genresElement.innerText = serie.genres.length !== 0 ? serie.genres : defaultText;
+        document.getElementById("summary").innerHTML = formatSummary(serie.summary)
+    } catch (error) {
+        const imageElement = document.getElementById("serie-image");
+        imageElement.setAttribute("src", "Image/deadImage.png");
+        imageElement.setAttribute("alt", "Error image");
+        setTextContent(document.getElementById("serie-title"), "Too many requests, please try again with the reroll button", defaultText);
+        setTextContent(document.getElementById("premiered"), null, defaultText);
+        setTextContent(document.getElementById("language"), null, defaultText);
+        setTextContent(document.getElementById("network"), null, defaultText);
+        setTextContent(document.getElementById("genres"), null, defaultText);
+        setTextContent(document.getElementById("summary"), null, defaultText);
     }
 
-    const genresElement = document.getElementById("genres");
-    genresElement.innerText = serie.genres.length !== 0 ? serie.genres : defaultText;
-    document.getElementById("summary").innerHTML = formatSummary(serie.summary)
 }
 
 async function displayPersonality() {
-    const personality = await getRandomlyWithRequest("https://api.tvmaze.com/people/");
-    const imageElement = document.getElementById("personality-image");
+    try {
+        const personality = await getRandomlyWithRequest("https://api.tvmaze.com/people/");
+        const imageElement = document.getElementById("personality-image");
 
-    setTextContent(document.getElementById("personality-name"), personality.name, defaultText);
-    setTextContent(document.getElementById("birthday"), personality.birthday, defaultText);
+        setTextContent(document.getElementById("personality-name"), personality.name, defaultText);
+        setTextContent(document.getElementById("birthday"), personality.birthday, defaultText);
 
-    if (personality.country) {
-        setTextContent(document.getElementById("country"),  personality.country.name, defaultText);
+        if (personality.country) {
+            setTextContent(document.getElementById("country"), personality.country.name, defaultText);
+        }
+        setImageAttributes(imageElement, personality)
+    } catch (error) {
+        const imageElement = document.getElementById("personality-image");
+        imageElement.setAttribute("src", "Image/deadImage.png");
+        imageElement.setAttribute("alt", "Error image");
+        setTextContent(document.getElementById("personality-name"), "Too many requests, please try again with the reroll button", defaultText);
+        setTextContent(document.getElementById("birthday"), null, defaultText);
+        setTextContent(document.getElementById("country"), null, defaultText);
     }
-    setImageAttributes(imageElement,personality )
 }
