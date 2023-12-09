@@ -1,6 +1,4 @@
-* {
-    margin: 0;
-}
+/*IMPORT FONTS*/
 
 @font-face {
     font-family: Inter;
@@ -26,15 +24,27 @@
         url('./fonts/Poppins/Poppins-Bold.ttf');
 }
 
-body {
+/* DEFAULT VALUES */
+
+* {
     margin: 0;
+}
+
+body {
     font-family: 'poppins', sans-serif;
 }
 
 /*Style for the header------------------------------------------*/
+
 header {
     background-color: black;
     padding : 2vh 1vw;
+}
+
+header ul {
+    display:flex;
+    justify-content: flex-start;
+    margin: 0%;
 }
 
 header li {
@@ -59,13 +69,19 @@ header img:hover {
     transition: 0.5s;
 }
 
-.aligne_le_menu {
-    display:flex;
-    justify-content: flex-start;
-    margin: 0%;
+header a {
+    text-decoration: none;
+    color: white;
+    font-family: Inter;
+    transition: 1s;
 }
 
-/*------------------------------------------*/
+header a:hover {
+    color: grey;
+    transition: 1s;
+}
+
+/*Homepage's style------------------------------------------*/
 
 #accueil {
     display:flex;
@@ -117,18 +133,6 @@ header img:hover {
     color: white;
 }
 
-header a {
-    text-decoration: none;
-    color: white;
-    font-family: Inter;
-    transition: 1s;
-}
-
-header a:hover {
-    color: grey;
-    transition: 1s;
-}
-
 #fonctionnalites {
     padding: 5vh 0;
     font-family: Poppins;
@@ -154,6 +158,8 @@ section#fonctionnalites > nav > a {
     font-size: 1.25rem;
     padding: 5vh;
 }
+
+/*Buttons style*/
 
 button {
     border: none;
@@ -181,8 +187,6 @@ button:hover {
     background-color: white;
     color: black;
 }
-
-
 
 section#lien > nav {
     padding: 3vh;
@@ -277,6 +281,7 @@ article img {
 
 
 /*Footer--------------------------------------------------------------*/
+
 footer{
     text-align: center;
     background-color: black;
@@ -291,6 +296,15 @@ footer>div{
     flex-wrap: wrap;
     align-items: center;
     padding: 5vh 0 5vh 0;
+}
+
+footer img {
+    transition: 1s;
+}
+
+footer img:hover {
+    transition: 1s;
+    transform: rotate(360deg);
 }
 
 footer a {
