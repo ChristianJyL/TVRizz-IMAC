@@ -30,9 +30,15 @@
     margin: 0;
 }
 
-body {
+body, html {
     font-family: 'poppins', sans-serif;
+    height: 100%;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+  }
 
 /*Style for the header------------------------------------------*/
 
@@ -311,6 +317,7 @@ footer{
     background-color: black;
     color: white;
     padding: 3vh;
+    margin-top: auto;
 }
 
 footer>div{
