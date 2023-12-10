@@ -164,7 +164,7 @@ header a:hover {
 }
 
 #presentation>img{
-    max-height: 25vh;
+    max-width: 25vw;
     margin: 0 1vw;
 }
 
@@ -409,8 +409,8 @@ address{
         text-align: center;
     }
 
-    #presentation img{
-        max-height: 50vh;
+    #presentation>img{
+        max-width: 40vw;
     }
 
     /* Search pages */
