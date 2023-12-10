@@ -264,7 +264,7 @@ h3 {
     border: none;
 }
 
-article{
+#main-content>article{
     margin-top: 3vh;
 }
 
@@ -294,7 +294,7 @@ b {
     max-width: 50rem;
 }
 
-article img {
+#main-content>article img {
     height: 20rem;
     margin: 2rem;
 }
