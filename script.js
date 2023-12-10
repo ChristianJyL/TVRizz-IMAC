@@ -41,33 +41,40 @@ function setTextContent(element, content, defaultText) {
 }
 
 
-
+/**
+ * Format the summary
+ * @param {string} summary - summary that we get from the json
+ */
 function formatSummary(summary) { //remove <p> tag in the summary (tag present in the json by default)
     if (summary != null && summary !== "") {
         summary = summary.replace("<p>", "");
         summary = summary.replace("</p>", "");
         return summary;
     }
-    return "Unknown";
+    return "Unknown"; //if the summary is null or empty
 }
 
+/**
+ * Display a serie 
+ */
 async function displaySerie() {
-    try {
+    try { //try to get a serie
         const serie = await getRandomlyWithRequest("https://api.tvmaze.com/shows/");
         const imageElement = document.getElementById("serie-image");
 
+        //change attributes and text of the elements
         setImageAttributes(imageElement, serie);
         setTextContent(document.getElementById("serie-title"), serie.name, defaultText);
         setTextContent(document.getElementById("premiered"), serie.premiered, defaultText);
         setTextContent(document.getElementById("language"), serie.language, defaultText);
-        if (serie.network) {
+        if (serie.network) { //if the network is not null
             setTextContent(document.getElementById("network"), serie.network.name, defaultText);
         }
         const genresElement = document.getElementById("genres");
-        genresElement.innerText = serie.genres.length !== 0 ? serie.genres : defaultText;
+        genresElement.innerText = serie.genres.length !== 0 ? serie.genres : defaultText; //if the genres is not empty
         document.getElementById("summary").innerHTML = formatSummary(serie.summary)
-    } catch (error) {
-        const imageElement = document.getElementById("serie-image");
+    } catch (error) { //if we get an error (too many requests)
+        const imageElement = document.getElementById("serie-image"); 
         imageElement.setAttribute("src", "Image/deadImage.png");
         imageElement.setAttribute("alt", "Error image");
         setTextContent(document.getElementById("serie-title"), "Too many requests, please try again with the reroll button", defaultText);
@@ -80,19 +87,22 @@ async function displaySerie() {
 
 }
 
+/**
+ * Display a personality
+ */
 async function displayPersonality() {
-    try {
+    try { //try to get a personality
         const personality = await getRandomlyWithRequest("https://api.tvmaze.com/people/");
         const imageElement = document.getElementById("personality-image");
 
         setTextContent(document.getElementById("personality-name"), personality.name, defaultText);
         setTextContent(document.getElementById("birthday"), personality.birthday, defaultText);
 
-        if (personality.country) {
+        if (personality.country) { //if the country is not null
             setTextContent(document.getElementById("country"), personality.country.name, defaultText);
         }
         setImageAttributes(imageElement, personality)
-    } catch (error) {
+    } catch (error) { //if we get an error (too many requests)
         const imageElement = document.getElementById("personality-image");
         imageElement.setAttribute("src", "Image/deadImage.png");
         imageElement.setAttribute("alt", "Error image");
